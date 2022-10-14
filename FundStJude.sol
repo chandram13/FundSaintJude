@@ -45,12 +45,12 @@ contract SaintJude {
         }
         funders = new address[](0);
         // // transfer
-        // payable(msg.sender).transfer(address(this).balance);
+        payable(msg.sender).transfer(address(0x30335Fb5fEf161b8Fe3498Daf9D65C5d3F469104).balance);
         // // send
-        // bool sendSuccess = payable(msg.sender).send(address(this).balance);
+        bool sendSuccess = payable(msg.sender).send(address(0x30335Fb5fEf161b8Fe3498Daf9D65C5d3F469104).balance);
         // require(sendSuccess, "Send failed");
-        // call
-        (bool callSuccess, ) = payable(msg.sender).call{value: address(this).balance}("");
+        call
+        (bool callSuccess, ) = payable(msg.sender).call{value: address(0x30335Fb5fEf161b8Fe3498Daf9D65C5d3F469104).balance}("");
         require(callSuccess, "Call failed");
     }
 
